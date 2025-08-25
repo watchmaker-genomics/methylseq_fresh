@@ -73,6 +73,10 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
         /*
          * Run Picard MarkDuplicates or GATK4 (picard) MarkDuplicates with the --REMOVE_DUPLICATES true flag
          */
+        ch_alignment.view()
+        ch_fasta.view()
+        ch_fasta_index.view()
+        
         PICARD_MARKDUPLICATES (
             ch_alignment,
             ch_fasta,
