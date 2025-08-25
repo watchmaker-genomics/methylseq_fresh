@@ -1,6 +1,7 @@
 include { BAM_SORT_STATS_SAMTOOLS                           } from '../../nf-core/bam_sort_stats_samtools/main'
 include { FASTQ_ALIGN_BWA                                   } from '../../nf-core/fastq_align_bwa/main'
 include { GATK4_MARKDUPLICATES as GATK4_REMOVEDUPLICATES    } from '../../../modules/nf-core/gatk4/markduplicates/main'
+include { PICARD_MARKDUPLICATES                             } from '../../../modules/nf-core/picard/markduplicates/main'  
 include { PARABRICKS_FQ2BAM                                 } from '../../../modules/nf-core/parabricks/fq2bam/main'
 include { SAMTOOLS_SORT                                     } from '../../../modules/nf-core/samtools/sort/main'
 include { SAMTOOLS_INDEX as SAMTOOLS_INDEX_ALIGNMENTS       } from '../../../modules/nf-core/samtools/index/main'
@@ -70,9 +71,9 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
 
     if (!skip_deduplication) {
         /*
-         * Run GATK4 (picard) MarkDuplicates with the --REMOVE_DUPLICATES true flag
+         * Run Picard MarkDuplicates or GATK4 (picard) MarkDuplicates with the --REMOVE_DUPLICATES true flag
          */
-        GATK4_REMOVEDUPLICATES (
+        PICARD_MARKDUPLICATES (
             ch_alignment,
             ch_fasta.map[1],
             ch_fasta_index.map[1]
@@ -82,12 +83,12 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
          * Run samtools index on deduplicated alignment
          */
         SAMTOOLS_INDEX_DEDUPLICATED (
-            GATK4_REMOVEDUPLICATES.out.bam
+            PICARD_MARKDUPLICATES.out.bam
         )
-        ch_alignment       = GATK4_REMOVEDUPLICATES.out.bam
+        ch_alignment       = PICARD_MARKDUPLICATES.out.bam
         ch_alignment_index = SAMTOOLS_INDEX_DEDUPLICATED.out.bai
-        ch_picard_metrics  = GATK4_REMOVEDUPLICATES.out.metrics
-        ch_versions        = ch_versions.mix(GATK4_REMOVEDUPLICATES.out.versions)
+        ch_picard_metrics  = PICARD_MARKDUPLICATES.out.metrics
+        ch_versions        = ch_versions.mix(PICARD_MARKDUPLICATES.out.versions)
         ch_versions        = ch_versions.mix(SAMTOOLS_INDEX_DEDUPLICATED.out.versions)
 
         // Do we want to run samtools stats on the deduplicated alignment?
