@@ -75,8 +75,8 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
          */
         PICARD_MARKDUPLICATES (
             ch_alignment,
-            ch_fasta.map[1],
-            ch_fasta_index.map[1]
+            ch_fasta.map{ meta, fasta -> fasta },
+            ch_fasta_index.map{ meta, fasta_index -> fasta_index }
         )
 
         /*
