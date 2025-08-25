@@ -181,6 +181,7 @@ workflow METHYLSEQ {
         FASTQ_ALIGN_DEDUP_BWAMEM (
             ch_bwamem_inputs.reads,
             ch_bwamem_inputs.fasta,
+            ch_bwamem_inputs.fasta_index,
             ch_bwamem_inputs.bwamem_index,
             params.skip_deduplication,
             workflow.profile.tokenize(',').intersect(['gpu']).size() >= 1
