@@ -58,8 +58,8 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
         FASTQ_ALIGN_BWA (
             ch_reads,
             ch_bwamem_index,
-            ch_fasta,
             true, // val_sort_bam hardcoded to true
+            ch_fasta
         )
         ch_alignment        = ch_alignment.mix(FASTQ_ALIGN_BWA.out.bam)
         ch_alignment_index  = ch_alignment.mix(FASTQ_ALIGN_BWA.out.bai)
