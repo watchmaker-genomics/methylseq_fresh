@@ -73,29 +73,24 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
         /*
          * Run Picard MarkDuplicates or GATK4 (picard) MarkDuplicates with the --REMOVE_DUPLICATES true flag
          */
-        ch_alignment.view()
-        ch_fasta.view()
-        ch_fasta_index.view()
-        
-        PICARD_MARKDUPLICATES (
+
+        GATK4_REMOVEDUPLICATES (
             ch_alignment,
-            ch_fasta,
-            ch_fasta_index
+            ch_fasta.map{ meta, fasta -> fasta },
+            ch_fasta_index.map{ meta, fasta_index -> fasta_index }
         )
 
         /*
          * Run samtools index on deduplicated alignment
          */
         SAMTOOLS_INDEX_DEDUPLICATED (
-            PICARD_MARKDUPLICATES.out.bam
+            GATK4_REMOVEDUPLICATES.out.bam
         )
-        ch_alignment       = PICARD_MARKDUPLICATES.out.bam
+        ch_alignment       = GATK4_REMOVEDUPLICATES.out.bam
         ch_alignment_index = SAMTOOLS_INDEX_DEDUPLICATED.out.bai
-        ch_picard_metrics  = PICARD_MARKDUPLICATES.out.metrics
-        ch_versions        = ch_versions.mix(PICARD_MARKDUPLICATES.out.versions)
+        ch_picard_metrics  = GATK4_REMOVEDUPLICATES.out.metrics
+        ch_versions        = ch_versions.mix(GATK4_REMOVEDUPLICATES.out.versions)
         ch_versions        = ch_versions.mix(SAMTOOLS_INDEX_DEDUPLICATED.out.versions)
-
-        // Do we want to run samtools stats on the deduplicated alignment?
     }
 
     /*
