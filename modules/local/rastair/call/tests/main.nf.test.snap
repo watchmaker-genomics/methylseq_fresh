@@ -1,5 +1,5 @@
 {
-    "Rastair Call conversion calls": {
+    "rastair call conversion calls": {
         "content": [
             [
                 [
@@ -14,9 +14,9 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.0",
+            "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-26T13:20:12.548689"
+        "timestamp": "2025-08-26T19:41:07.025392062"
     }
 }
