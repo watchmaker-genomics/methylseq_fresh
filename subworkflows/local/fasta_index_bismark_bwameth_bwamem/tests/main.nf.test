@@ -23,9 +23,10 @@ nextflow_workflow {
                 input[1] = [] // fasta_index
                 input[2] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bowtie2_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
                 input[3] = [] // bwameth_index
-                input[4] = "bismark" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bismark" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
