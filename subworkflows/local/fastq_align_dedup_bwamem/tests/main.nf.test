@@ -25,7 +25,7 @@ nextflow_workflow {
                 """
                 input[0] = [
                     [:],
-                    file('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwamem_Index.tar.gz', checkIfExists: true)
+                    file('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwameth_Index.tar.gz', checkIfExists: true)
                 ]
                 """
             }
