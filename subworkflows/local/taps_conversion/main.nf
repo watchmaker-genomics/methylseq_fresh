@@ -44,6 +44,8 @@ workflow TAPS_CONVERSION {
     ch_rastair_mbias_parser = RASTAIR_MBIAS_PARSER.out.mbias_processed_str // channel: [ val(meta), nOT_clip, nOB_clip ]
     ch_versions             = ch_versions.mix(RASTAIR_MBIAS_PARSER.out.versions.first())
 
+    ch_rastair_mbias_parser.view()
+
     RASTAIR_CALL (
         ch_bam,
         ch_bai,
