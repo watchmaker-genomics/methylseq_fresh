@@ -1,6 +1,5 @@
 include { BAM_SORT_STATS_SAMTOOLS                           } from '../../nf-core/bam_sort_stats_samtools/main'
 include { FASTQ_ALIGN_BWA                                   } from '../../nf-core/fastq_align_bwa/main'
-include { GATK4_MARKDUPLICATES as GATK4_REMOVEDUPLICATES    } from '../../../modules/nf-core/gatk4/markduplicates/main'
 include { PICARD_ADDORREPLACEREADGROUPS                     } from '../../../modules/nf-core/picard/addorreplacereadgroups/main'
 include { PICARD_MARKDUPLICATES as PICARD_REMOVEDUPLICATES  } from '../../../modules/nf-core/picard/markduplicates/main'  
 include { PARABRICKS_FQ2BAM                                 } from '../../../modules/nf-core/parabricks/fq2bam/main'
@@ -83,7 +82,7 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
         ch_versions = ch_versions.mix(PICARD_ADDORREPLACEREADGROUPS.out.versions)
 
         /*
-         * Run Picard MarkDuplicates or GATK4 (picard) MarkDuplicates with the --REMOVE_DUPLICATES true flag
+         * Run Picard MarkDuplicates with the --REMOVE_DUPLICATES true flag
          */
         PICARD_REMOVEDUPLICATES (
             PICARD_ADDORREPLACEREADGROUPS.out.bam,
