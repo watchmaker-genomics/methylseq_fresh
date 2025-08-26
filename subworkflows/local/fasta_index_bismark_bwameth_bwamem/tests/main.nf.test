@@ -54,9 +54,10 @@ nextflow_workflow {
                 input[1] = [] // fasta_index
                 input[2] = [] // bismark_index
                 input[3] = [] // bwameth_index
-                input[4] = "bismark" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bismark" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
@@ -84,9 +85,10 @@ nextflow_workflow {
                 input[1] = [] // fasta_index
                 input[2] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Hisat2_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
                 input[3] = [] // bwameth_index
-                input[4] = "bismark_hisat" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bismark_hisat2" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
@@ -114,9 +116,10 @@ nextflow_workflow {
                 input[1] = [] // fasta_index
                 input[2] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Hisat2_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
                 input[3] = [] // bwameth_index
-                input[4] = "bismark_hisat" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bismark_hisat2" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
@@ -144,9 +147,10 @@ nextflow_workflow {
                 input[1] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/genome.fa.fai', checkIfExists: true).map { it -> [ [:], it ] }
                 input[2] = [] // bismark index
                 input[3] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwameth_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
-                input[4] = "bwameth" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
@@ -174,9 +178,10 @@ nextflow_workflow {
                 input[1] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/genome.fa.fai', checkIfExists: true).map { it -> [ [:], it ] }
                 input[2] = [] // bismark index
                 input[3] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwameth_mem2_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
-                input[4] = "bwameth" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = true // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = true // use_mem2
                 """
             }
         }
@@ -204,9 +209,10 @@ nextflow_workflow {
                 input[1] = [] //fasta index
                 input[2] = [] // bismark index
                 input[3] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwameth_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
-                input[4] = "bwameth" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
@@ -234,9 +240,10 @@ nextflow_workflow {
                 input[1] = [] //fasta index
                 input[2] = [] // bismark index
                 input[3] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwameth_mem2_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
-                input[4] = "bwameth" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = true // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = true // use_mem2
                 """
             }
         }
@@ -264,9 +271,10 @@ nextflow_workflow {
                 input[1] = [] // fasta_index
                 input[2] = [] // bismark index
                 input[3] = [] // bwameth index
-                input[4] = "bwameth" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
@@ -294,9 +302,10 @@ nextflow_workflow {
                 input[1] = [] // fasta_index
                 input[2] = [] // bismark index
                 input[3] = [] // bwameth index
-                input[4] = "bwameth" // aligner
-                input[5] = false // collecthsmetrics
-                input[6] = true // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = false // collecthsmetrics
+                input[7] = true // use_mem2
                 """
             }
         }
@@ -324,9 +333,10 @@ nextflow_workflow {
                 input[1] = [] //fasta index
                 input[2] = [] // bismark index
                 input[3] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwameth_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
-                input[4] = "bwameth" // aligner
-                input[5] = true // collecthsmetrics
-                input[6] = false // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = true // collecthsmetrics
+                input[7] = false // use_mem2
                 """
             }
         }
@@ -354,9 +364,10 @@ nextflow_workflow {
                 input[1] = [] //fasta index
                 input[2] = [] // bismark index
                 input[3] = Channel.fromPath('https://github.com/nf-core/test-datasets/raw/methylseq/reference/Bwameth_mem2_Index.tar.gz', checkIfExists: true).map { it -> [ [:], it ] }
-                input[4] = "bwameth" // aligner
-                input[5] = true // collecthsmetrics
-                input[6] = true // use_mem2
+                input[4] = [] // bwamem_index
+                input[5] = "bwameth" // aligner
+                input[6] = true // collecthsmetrics
+                input[7] = true // use_mem2
                 """
             }
         }

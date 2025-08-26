@@ -35,6 +35,11 @@ input:
       description: |
         Bwameth genome index files
         Structure: [ val(meta), path(bwameth_index) ]
+  - bwamem_index:
+      type: file
+      description: |
+        Bwamem genome index files
+        Structure: [ val(meta), path(bwamem_index) ]
   - aligner:
       type: string
       description: |
