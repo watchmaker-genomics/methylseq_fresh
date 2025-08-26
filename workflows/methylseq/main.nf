@@ -216,7 +216,7 @@ workflow METHYLSEQ {
     //
     // Subworkflow: Count negative C->T conversion rates as a readout for DNA methylation
     //
-    else if (!params.taps || params.aligner == 'bwameth'){ // Not TAPS, hence negative mC readout
+    else if (!params.taps && (params.aligner == 'bwameth' || (params.aligner == 'bwamem'))) {
         METHYLDACKEL (
             ch_bam,
             ch_bai,
