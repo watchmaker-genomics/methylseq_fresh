@@ -122,8 +122,7 @@ workflow FASTQ_ALIGN_DEDUP_BWAMETH {
     ch_multiqc_files = ch_picard_metrics.collect{ meta, metrics -> metrics }
                         .mix(ch_samtools_flagstat.collect{ meta, flagstat -> flagstat })
                         .mix(ch_samtools_stats.collect{ meta, stats -> stats  })
-                        .mix(ch_methydackel_extract_bedgraph.collect{ meta, bedgraph -> bedgraph  })
-                        .mix(ch_methydackel_mbias.collect{ meta, txt -> txt  })
+
 
     emit:
     bam                           = ch_alignment                     // channel: [ val(meta), [ bam ]       ]
