@@ -1,7 +1,8 @@
 include { BAM_SORT_STATS_SAMTOOLS                           } from '../../nf-core/bam_sort_stats_samtools/main'
 include { FASTQ_ALIGN_BWA                                   } from '../../nf-core/fastq_align_bwa/main'
 include { GATK4_MARKDUPLICATES as GATK4_REMOVEDUPLICATES    } from '../../../modules/nf-core/gatk4/markduplicates/main'
-include { PICARD_MARKDUPLICATES                             } from '../../../modules/nf-core/picard/markduplicates/main'  
+include { PICARD_ADDORREPLACEREADGROUPS                     } from '../../../modules/nf-core/picard/addorreplacereadgroups/main'
+include { PICARD_MARKDUPLICATES as PICARD_REMOVEDUPLICATES  } from '../../../modules/nf-core/picard/markduplicates/main'  
 include { PARABRICKS_FQ2BAM                                 } from '../../../modules/nf-core/parabricks/fq2bam/main'
 include { SAMTOOLS_SORT                                     } from '../../../modules/nf-core/samtools/sort/main'
 include { SAMTOOLS_INDEX as SAMTOOLS_INDEX_ALIGNMENTS       } from '../../../modules/nf-core/samtools/index/main'
@@ -71,25 +72,35 @@ workflow FASTQ_ALIGN_DEDUP_BWAMEM {
 
     if (!skip_deduplication) {
         /*
-         * Run Picard MarkDuplicates or GATK4 (picard) MarkDuplicates with the --REMOVE_DUPLICATES true flag
+         * Run Picard AddOrReplaceReadGroups to add read group (RG) to reads in bam file
          */
 
-        GATK4_REMOVEDUPLICATES (
+        PICARD_ADDORREPLACEREADGROUPS (
             ch_alignment,
-            ch_fasta.map{ meta, fasta -> fasta },
-            ch_fasta_index.map{ meta, fasta_index -> fasta_index }
+            ch_fasta,
+            ch_fasta_index
         )
+        ch_versions = ch_versions.mix(PICARD_ADDORREPLACEREADGROUPS.out.versions)
+
+        /*
+         * Run Picard MarkDuplicates or GATK4 (picard) MarkDuplicates with the --REMOVE_DUPLICATES true flag
+         */
+        PICARD_REMOVEDUPLICATES (
+            PICARD_ADDORREPLACEREADGROUPS.out.bam,
+            ch_fasta,
+            ch_fasta_index
+        )
+        ch_versions = ch_versions.mix(PICARD_REMOVEDUPLICATES.out.versions)
 
         /*
          * Run samtools index on deduplicated alignment
          */
         SAMTOOLS_INDEX_DEDUPLICATED (
-            GATK4_REMOVEDUPLICATES.out.bam
+            PICARD_REMOVEDUPLICATES.out.bam
         )
-        ch_alignment       = GATK4_REMOVEDUPLICATES.out.bam
+        ch_alignment       = PICARD_REMOVEDUPLICATES.out.bam
         ch_alignment_index = SAMTOOLS_INDEX_DEDUPLICATED.out.bai
-        ch_picard_metrics  = GATK4_REMOVEDUPLICATES.out.metrics
-        ch_versions        = ch_versions.mix(GATK4_REMOVEDUPLICATES.out.versions)
+        ch_picard_metrics  = PICARD_REMOVEDUPLICATES.out.metrics
         ch_versions        = ch_versions.mix(SAMTOOLS_INDEX_DEDUPLICATED.out.versions)
     }
 
