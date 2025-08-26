@@ -1,21 +1,18 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/subworkflows/yaml-schema.json
-name: "fastq_align_dedup_bwameth"
-description: Performs alignment of BS-Seq reads using bwameth or parabricks/fq2bammeth, sort and deduplicate
+name: "fastq_align_dedup_bwamem"
+description: Performs alignment of BS-Seq reads using bwamem or parabricks/fq2bam, sort and deduplicate
 keywords:
-  - bwameth
+  - bwamem
   - alignment
-  - 3-letter genome
   - map
-  - methylation
   - 5mC
   - methylseq
-  - bisulphite
-  - bisulfite
+  - DNA
   - fastq
   - bam
 components:
-  - bwameth/align
-  - parabricks/fq2bammeth
+  - bwa/mem
+  - parabricks/fq2bam
   - samtools/sort
   - samtools/index
   - samtools/flagstat
@@ -37,11 +34,11 @@ input:
       type: file
       description: |
         Structure: [ val(meta), path(fasta index) ]
-  - ch_bwameth_index:
+  - ch_bwame _index:
       description: |
-        Bwa-meth genome index files
+        Bwa-mem genome index files
         Structure: [ val(meta), path(index) ]
-      pattern: "Bwa-methIndex"
+      pattern: "Bwa-memIndex"
   - skip_deduplication:
       type: boolean
       description: |
@@ -94,8 +91,6 @@ output:
         Structure: [ path(versions.yml) ]
       pattern: "versions.yml"
 authors:
-  - "@sateeshperi"
+  - "@eduard-watchmaker"
 maintainers:
-  - "@sateeshperi"
-  - "@gallvp"
   - "@eduard-watchmaker"
