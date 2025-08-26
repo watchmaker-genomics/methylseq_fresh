@@ -11,6 +11,7 @@ components:
   - gunzip
   - bismark/genomepreparation
   - bwameth/index
+  - bwa/index
   - samtools/faidx
 input:
   - fasta:
@@ -77,6 +78,12 @@ output:
         Bwameth genome index files
         Structure: [ val(meta), path(bwameth_index) ]
         pattern: "index"
+  - bwamem_index:
+      type: file
+      description: |
+        Bwamem genome index files
+        Structure: [ val(meta), path(bwamem_index) ]
+        pattern: "index"
   - versions:
       type: file
       description: |
@@ -86,6 +93,8 @@ output:
 authors:
   - "@sateeshperi"
   - "dcarrillox"
+  - "@eduard.watchmaker"
 maintainers:
   - "@sateeshperi"
   - "@dcarrillox"
+  - "@eduard.watchmaker"

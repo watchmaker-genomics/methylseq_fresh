@@ -3,10 +3,6 @@ include { FASTQ_ALIGN_BWA                                   } from '../../nf-cor
 include { PICARD_ADDORREPLACEREADGROUPS                     } from '../../../modules/nf-core/picard/addorreplacereadgroups/main'
 include { PICARD_MARKDUPLICATES as PICARD_REMOVEDUPLICATES  } from '../../../modules/nf-core/picard/markduplicates/main'  
 include { PARABRICKS_FQ2BAM                                 } from '../../../modules/nf-core/parabricks/fq2bam/main'
-include { SAMTOOLS_SORT                                     } from '../../../modules/nf-core/samtools/sort/main'
-include { SAMTOOLS_INDEX as SAMTOOLS_INDEX_ALIGNMENTS       } from '../../../modules/nf-core/samtools/index/main'
-include { SAMTOOLS_FLAGSTAT                                 } from '../../../modules/nf-core/samtools/flagstat/main'
-include { SAMTOOLS_STATS                                    } from '../../../modules/nf-core/samtools/stats/main'
 include { SAMTOOLS_INDEX as SAMTOOLS_INDEX_DEDUPLICATED     } from '../../../modules/nf-core/samtools/index/main'
 
 workflow FASTQ_ALIGN_DEDUP_BWAMEM {

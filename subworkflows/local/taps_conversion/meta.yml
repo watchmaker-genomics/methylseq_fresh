@@ -8,7 +8,9 @@ keywords:
 
 components:
   - rastair/mbias
+  - rastair/mbias_parser
   - rastair/call
+  - rastair/methylkit
 input:
   - ch_fasta:
       type: file
@@ -47,6 +49,12 @@ output:
         Rastair call output files (similar to bed format, genome-wide)
         Structure: [ val(meta), path(call) ]
       pattern: "*.txt"
+  - methylkit:
+      type: file
+      description: |
+        Rastair call output files in MethylKit format (similar to bed format, genome-wide)
+        Structure: [ val(meta), path(methylkit) ]
+      pattern: "*.gz"
   - versions:
       type: file
       description: |
