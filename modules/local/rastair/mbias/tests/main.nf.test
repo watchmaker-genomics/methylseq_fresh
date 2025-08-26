@@ -8,7 +8,7 @@ nextflow_process {
     tag "rastair"
     tag "rastair/mbias"
 
-    test("MBias conversion calls") {
+    test("Rastair MBias conversion calls") {
 
         when {
             process {

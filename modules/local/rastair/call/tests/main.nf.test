@@ -8,7 +8,7 @@ nextflow_process {
     tag "rastair"
     tag "rastair/call"
 
-    test("MBias conversion calls") {
+    test("Rastair Call conversion calls") {
 
         when {
             process {
@@ -29,6 +29,15 @@ nextflow_process {
                     [ id:'test' ], // meta map
                     file(params.modules_testdata_base_path + 'genomics/sarscov2/genome/genome.fasta.fai', checkIfExists: true)
                 ]
+                input[4] = [
+                    [ id:'test' ], // meta map
+                    val(0)
+                ]
+                input[5] = [
+                    [ id:'test' ], // meta map
+                    val(0)
+                ]
+
                 """
             }
         }
