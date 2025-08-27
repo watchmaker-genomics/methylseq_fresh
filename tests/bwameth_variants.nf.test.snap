@@ -236,8 +236,7 @@
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
                 "methyldackel/SRR389222_sub3.markdup.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/SRR389222_sub3.mbias.txt",
+                "methyldackel/SRR389222_sub3.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -488,7 +487,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:06:04.130143785"
+        "timestamp": "2025-08-27T21:25:08.565752294"
     },
     "Params: bwameth with skip_deduplication": {
         "content": [
@@ -563,9 +562,8 @@
                 "fastqc/zips/SRR389222_sub2_fastqc.zip",
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
-                "methyldackel/SRR389222_sub3.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/SRR389222_sub3.mbias.txt",
+                "methyldackel/Ecoli_10K_methylated.mbias.txt",
+                "methyldackel/Ecoli_10K_methylated.sorted_CpG.bedGraph",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -698,8 +696,8 @@
                 "SRR389222_sub2.stats:md5,b60c66a26f2c346cbb85fb59c8de392b",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
                 "SRR389222_sub3.stats:md5,cf3e88bd028b048c6f6a416eacef6a1b",
-                "SRR389222_sub3.sorted_CpG.bedGraph:md5,70dcc3836dc9721c2de367d1cf05e815",
-                "SRR389222_sub3.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
+                "Ecoli_10K_methylated.mbias.txt:md5,3a448a2a6364b2de3129365a271c0534",
+                "Ecoli_10K_methylated.sorted_CpG.bedGraph:md5,aa88f19284e63097e9abccac4d7c6669",
                 "cutadapt_filtered_reads_plot.txt:md5,ff1b6d4011a5be5410b9404f7ff56c56",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,57d07c19b0c30dc88df96c30bedcdc33",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,1e5ca4193f8290c5c812334d03615b41",
@@ -746,7 +744,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:03:22.589882814"
+        "timestamp": "2025-08-27T21:22:25.220283521"
     },
     "Params: bwameth with skip_fastqc": {
         "content": [
@@ -825,9 +823,8 @@
                 "bwameth/deduplicated/picard_metrics/SRR389222_sub2.markdup.sorted.MarkDuplicates.metrics.txt",
                 "bwameth/deduplicated/picard_metrics/SRR389222_sub3.markdup.sorted.MarkDuplicates.metrics.txt",
                 "methyldackel",
-                "methyldackel/SRR389222_sub1.markdup.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/SRR389222_sub1.mbias.txt",
+                "methyldackel/SRR389222_sub3.markdup.sorted_CpG.bedGraph",
+                "methyldackel/SRR389222_sub3.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -923,8 +920,8 @@
                 "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
                 "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
-                "SRR389222_sub1.markdup.sorted_CpG.bedGraph:md5,0944ad0e3b05791bf6dfd06be7ca4af1",
-                "SRR389222_sub1.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
+                "SRR389222_sub3.markdup.sorted_CpG.bedGraph:md5,a91e6b039e9581a9d2ef6f6057918b39",
+                "SRR389222_sub3.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
                 "cutadapt_filtered_reads_plot.txt:md5,ff1b6d4011a5be5410b9404f7ff56c56",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,57d07c19b0c30dc88df96c30bedcdc33",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,1e5ca4193f8290c5c812334d03615b41",
@@ -981,7 +978,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:06:55.115169039"
+        "timestamp": "2025-08-27T21:25:56.802001683"
     },
     "Params: bwameth with CAT_FASTQ and skip_trimming and skip_deduplication": {
         "content": [
@@ -1046,9 +1043,8 @@
                 "fastqc/zips/Ecoli_10K_methylated_2_fastqc.zip",
                 "fastqc/zips/SRR389222_fastqc.zip",
                 "methyldackel",
+                "methyldackel/Ecoli_10K_methylated.mbias.txt",
                 "methyldackel/Ecoli_10K_methylated.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/Ecoli_10K_methylated.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -1143,8 +1139,8 @@
                 "SRR389222.flagstat:md5,a90f1bdcb30f4d0597ccf69fe0b37b1f",
                 "SRR389222.stats:md5,ff112795ace81e3e93cd3e4b42466a7a",
                 "SRR389222.merged.fastq.gz:md5,47e1d7461d511a970e80085dd6454775",
-                "Ecoli_10K_methylated.sorted_CpG.bedGraph:md5,3656c54896013b76de978ab95c3f5975",
                 "Ecoli_10K_methylated.mbias.txt:md5,ec13da6deba1ce147624bce065ec5df6",
+                "Ecoli_10K_methylated.sorted_CpG.bedGraph:md5,3656c54896013b76de978ab95c3f5975",
                 "fastqc-status-check-heatmap.txt:md5,04ba1bfaa7df8fb71d5a058e2463029f",
                 "fastqc_adapter_content_plot.txt:md5,48d8bd5ece984a74972ce0a0e814dd07",
                 "fastqc_overrepresented_sequences_plot.txt:md5,a94413e4d294e8161658bb5593387edb",
@@ -1179,7 +1175,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:08:13.817252845"
+        "timestamp": "2025-08-27T21:27:26.480031811"
     },
     "Params: bwameth": {
         "content": [
@@ -1273,9 +1269,8 @@
                 "fastqc/zips/SRR389222_sub2_fastqc.zip",
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
-                "methyldackel/SRR389222_sub3.markdup.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/SRR389222_sub3.mbias.txt",
+                "methyldackel/Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph",
+                "methyldackel/Ecoli_10K_methylated.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -1419,8 +1414,8 @@
                 "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
                 "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
-                "SRR389222_sub3.markdup.sorted_CpG.bedGraph:md5,a91e6b039e9581a9d2ef6f6057918b39",
-                "SRR389222_sub3.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
+                "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,d3bce01078b6e7749f3906bf9faad5b5",
+                "Ecoli_10K_methylated.mbias.txt:md5,3a448a2a6364b2de3129365a271c0534",
                 "cutadapt_filtered_reads_plot.txt:md5,ff1b6d4011a5be5410b9404f7ff56c56",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,57d07c19b0c30dc88df96c30bedcdc33",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,1e5ca4193f8290c5c812334d03615b41",
@@ -1488,7 +1483,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:00:55.327868122"
+        "timestamp": "2025-08-27T21:19:55.82366721"
     },
     "Params: bwameth with skip_multiqc": {
         "content": [
@@ -1582,9 +1577,8 @@
                 "fastqc/zips/SRR389222_sub2_fastqc.zip",
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
-                "methyldackel/Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/Ecoli_10K_methylated.mbias.txt",
+                "methyldackel/SRR389222_sub3.markdup.sorted_CpG.bedGraph",
+                "methyldackel/SRR389222_sub3.mbias.txt",
                 "pipeline_info",
                 "pipeline_info/nf_core_methylseq_software_mqc_versions.yml",
                 "trimgalore",
@@ -1616,8 +1610,8 @@
                 "SRR389222_sub2.stats:md5,75cb0f1e953843150e3b217ec3f271da",
                 "SRR389222_sub3.flagstat:md5,39516f7d2c77e6fef9543edf8cddbcd6",
                 "SRR389222_sub3.stats:md5,6876e424094ecdf302bd2097f8e21b1c",
-                "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,d3bce01078b6e7749f3906bf9faad5b5",
-                "Ecoli_10K_methylated.mbias.txt:md5,3a448a2a6364b2de3129365a271c0534"
+                "SRR389222_sub3.markdup.sorted_CpG.bedGraph:md5,a91e6b039e9581a9d2ef6f6057918b39",
+                "SRR389222_sub3.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81"
             ],
             [
                 [
@@ -1658,7 +1652,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:07:36.351946019"
+        "timestamp": "2025-08-27T21:26:39.54510756"
     },
     "Params: bwameth with skip_trimming": {
         "content": [
@@ -1748,8 +1742,7 @@
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
                 "methyldackel/Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/Ecoli_10K_methylated.mbias.txt",
+                "methyldackel/Ecoli_10K_methylated.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -1923,7 +1916,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:02:36.877116254"
+        "timestamp": "2025-08-27T21:21:39.110568003"
     },
     "Params: bwameth with mem2 index": {
         "content": [
@@ -2018,8 +2011,7 @@
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
                 "methyldackel/SRR389222_sub3.markdup.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/SRR389222_sub3.mbias.txt",
+                "methyldackel/SRR389222_sub3.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -2232,7 +2224,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:01:49.529828222"
+        "timestamp": "2025-08-27T21:20:50.610348996"
     },
     "Params: bwameth with save_reference and save_align_intermeds": {
         "content": [
@@ -2346,9 +2338,8 @@
                 "fastqc/zips/SRR389222_sub2_fastqc.zip",
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
-                "methyldackel/SRR389222_sub3.markdup.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/SRR389222_sub3.mbias.txt",
+                "methyldackel/Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph",
+                "methyldackel/Ecoli_10K_methylated.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -2498,8 +2489,8 @@
                 "genome.fa.bwameth.c2t.bwt:md5,4646f8ae6bd523b7f4106bbd32eff95e",
                 "genome.fa.bwameth.c2t.pac:md5,a662d7add09698e25c8152fd2306ec66",
                 "genome.fa.bwameth.c2t.sa:md5,4a1e905b828396a1909669bc9c573d8d",
-                "SRR389222_sub3.markdup.sorted_CpG.bedGraph:md5,a91e6b039e9581a9d2ef6f6057918b39",
-                "SRR389222_sub3.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
+                "Ecoli_10K_methylated.markdup.sorted_CpG.bedGraph:md5,d3bce01078b6e7749f3906bf9faad5b5",
+                "Ecoli_10K_methylated.mbias.txt:md5,3a448a2a6364b2de3129365a271c0534",
                 "cutadapt_filtered_reads_plot.txt:md5,ff1b6d4011a5be5410b9404f7ff56c56",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,57d07c19b0c30dc88df96c30bedcdc33",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,1e5ca4193f8290c5c812334d03615b41",
@@ -2599,7 +2590,7 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:05:05.236213169"
+        "timestamp": "2025-08-27T21:24:09.041884298"
     },
     "Params: bwameth with rrbs": {
         "content": [
@@ -2674,9 +2665,8 @@
                 "fastqc/zips/SRR389222_sub2_fastqc.zip",
                 "fastqc/zips/SRR389222_sub3_fastqc.zip",
                 "methyldackel",
-                "methyldackel/Ecoli_10K_methylated.deduplicated.sorted_CpG.bedGraph",
-                "methyldackel/mbias",
-                "methyldackel/mbias/Ecoli_10K_methylated.mbias.txt",
+                "methyldackel/SRR389222_sub3.deduplicated.sorted_CpG.bedGraph",
+                "methyldackel/SRR389222_sub3.mbias.txt",
                 "multiqc",
                 "multiqc/bwameth",
                 "multiqc/bwameth/multiqc_data",
@@ -2809,8 +2799,8 @@
                 "SRR389222_sub2.stats:md5,4b3589d2d54ec6fdc7fc4726723c698d",
                 "SRR389222_sub3.flagstat:md5,73a5cb246f6388d5d449775d6e35f5fa",
                 "SRR389222_sub3.stats:md5,249976d67f53ea30f09f51d98b811f50",
-                "Ecoli_10K_methylated.deduplicated.sorted_CpG.bedGraph:md5,aa55074c144aa6eaa184480038c75932",
-                "Ecoli_10K_methylated.mbias.txt:md5,7fb217502c2f3ae955bdfd744b6cbb72",
+                "SRR389222_sub3.deduplicated.sorted_CpG.bedGraph:md5,0ce36f42cc865eb59c7c6fd43d016d2c",
+                "SRR389222_sub3.mbias.txt:md5,fce04d733e066d0b933cedc602e2af81",
                 "cutadapt_filtered_reads_plot.txt:md5,ff1b6d4011a5be5410b9404f7ff56c56",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,57d07c19b0c30dc88df96c30bedcdc33",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,1e5ca4193f8290c5c812334d03615b41",
@@ -2857,6 +2847,6 @@
             "nf-test": "0.9.2",
             "nextflow": "24.10.5"
         },
-        "timestamp": "2025-08-27T21:04:10.499455105"
+        "timestamp": "2025-08-27T21:23:11.570251996"
     }
 }
