@@ -92,7 +92,7 @@
                     },
                     "multiqc": {
                         "branch": "master",
-                        "git_sha": "c9a31c472ef2d86802eb44f27322955849859361",
+                        "git_sha": "a4488d3d09244f29fb4606ba4eef85d59dcc6ad8",
                         "installed_by": ["modules"]
                     },
                     "parabricks/fq2bam": {
@@ -221,7 +221,7 @@
                     },
                     "fastq_align_dedup_bismark": {
                         "branch": "master",
-                        "git_sha": "8784324692c94acd129d583cb64e30a64ff197d9",
+                        "git_sha": "e89ff68a46b848c4d8aabb8569767516d46db319",
                         "installed_by": ["subworkflows"]
                     },
                     "fastq_align_dedup_bwameth": {
@@ -241,7 +241,7 @@
                     },
                     "utils_nfschema_plugin": {
                         "branch": "master",
-                        "git_sha": "2fd2cd6d0e7b273747f32e465fdc6bcc3ae0814e",
+                        "git_sha": "dcd088f483cede0c3df4034d405126f05a764cc7",
                         "installed_by": ["subworkflows"]
                     }
                 }
