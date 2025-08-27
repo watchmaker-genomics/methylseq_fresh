@@ -321,6 +321,14 @@
         },
         "taps": {
             "type": "boolean"
+        },
+        "trim_OT": {
+            "type": "string",
+            "default": "0,0,10,0"
+        },
+        "trim_OB": {
+            "type": "string",
+            "default": "0,0,10,0"
         }
     }
 }
