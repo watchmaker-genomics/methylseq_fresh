@@ -31,13 +31,13 @@ workflow TAPS_CONVERSION {
         ch_fasta_index.map{ it[1] },
     )
     ch_rastair_mbias = RASTAIR_MBIAS.out.txt // channel: [ val(meta), txt ]
-    ch_versions      = ch_versions.mix(RASTAIR_MBIAS.out.versions.first())
+    ch_versions      = ch_versions.mix(RASTAIR_MBIAS.out.versions)
 
     RASTAIR_MBIAS_PARSER (
         ch_rastair_mbias
     )
     ch_rastair_mbias_parser = RASTAIR_MBIAS_PARSER.out.mbias_processed_str // channel: [ val(meta), nOT_clip, nOB_clip ]
-    ch_versions             = ch_versions.mix(RASTAIR_MBIAS_PARSER.out.versions.first())
+    ch_versions             = ch_versions.mix(RASTAIR_MBIAS_PARSER.out.versions)
 
     RASTAIR_CALL (
         ch_bam,
@@ -48,13 +48,13 @@ workflow TAPS_CONVERSION {
         ch_rastair_mbias_parser.map{ it[2] },
     )
     ch_rastair_call = RASTAIR_CALL.out.txt // channel: [ val(meta), txt ]
-    ch_versions     = ch_versions.mix(RASTAIR_CALL.out.versions.first())
+    ch_versions     = ch_versions.mix(RASTAIR_CALL.out.versions)
 
     CONVERT_TO_METHYLKIT (
         ch_rastair_call
     )
     ch_methylkit = CONVERT_TO_METHYLKIT.out.methylkit // channel
-    ch_versions  = ch_versions.mix(CONVERT_TO_METHYLKIT.out.versions.first())
+    ch_versions  = ch_versions.mix(CONVERT_TO_METHYLKIT.out.versions)
 
     emit:
     mbias        = ch_rastair_mbias         // channel: [ val(meta), path("*.txt") ]
